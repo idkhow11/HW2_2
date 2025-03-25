@@ -62,16 +62,21 @@ public class Main {
                     }
                 }
                 boolean search = false;
+                System.out.print("점수가 " + inputScore + "인 학생은");
 
-                for(int i = 0; i < 10; i++){ // 점수가 10인 학생은 1 2 3 식이 아니라 문장 n개가 출력됨
-                    if(scores[i] == inputScore){
-                        System.out.println("점수가 " + inputScore + "인 학생은 "+
-                                IDs[i] + " 입니다.");
-                        search = true;
+                for (int i = 0; i < 10; i++) {
+                    if (scores[i] == inputScore) {
+                        System.out.print(" " + IDs[i]);
+                        if (!search) {
+                            search = true; // 첫 번째 값을 찾은 후 지속
+                        }
                     }
                 }
-                if(!search){
-                    System.out.println("점수가 " + inputScore + "인 학생은 없습니다.");
+
+                if (search) {
+                    System.out.println(" 입니다.");
+                } else {
+                    System.out.println(" 없습니다.");
                 }
             }
             else if(num == 3){
